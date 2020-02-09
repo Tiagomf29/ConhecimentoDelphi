@@ -25,7 +25,6 @@ object frmPrincipal: TfrmPrincipal
     Align = alTop
     Caption = 'Pesquisa de componentes'
     TabOrder = 0
-    ExplicitWidth = 868
     object lblDescricao: TLabel
       Left = 3
       Top = 40

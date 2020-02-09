@@ -106,6 +106,16 @@
 				<Form>frmExemploClientDataSetFiltro</Form>
 				<FormType>dfm</FormType>
 			</DCCReference>
+			<DCCReference Include="UExemploConstrutorDestrutor.pas">
+				<Form>frmConstrutoresDestrutores</Form>
+				<FormType>dfm</FormType>
+			</DCCReference>
+			<DCCReference Include="UExemploPolimorfismo.pas">
+				<Form>frmPolimorfismoSobrecargaSobrescrita</Form>
+				<FormType>dfm</FormType>
+			</DCCReference>
+			<DCCReference Include="UExemploHerancaPolimorfismo.pas"/>
+			<DCCReference Include="UPolimorfismo.pas"/>
 			<BuildConfiguration Include="Release">
 				<Key>Cfg_2</Key>
 				<CfgParent>Base</CfgParent>

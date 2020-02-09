@@ -10,7 +10,9 @@ uses
 
 type
 
-  TTiposFuncionalidades = (ttpNone, ttpComboboxObjetos, ttpFiltroClientDataSet, ttpRadioGroupObjetos);
+  TTiposFuncionalidades = (ttpNone, ttpComboboxObjetos, ttpFiltroClientDataSet, 
+                           ttpRadioGroupObjetos, ttpConstructorDestructor, 
+                           ttpPolimorfismo);
 
   TfrmPrincipal = class(TForm)
     GroupBox1: TGroupBox;
@@ -40,7 +42,8 @@ var
 
 implementation
 uses
-  UExemploCombobox,UExemploRadioGroup,UExemploClientDataSetFiltro;
+  UExemploCombobox, UExemploRadioGroup, UExemploClientDataSetFiltro,
+  UExemploConstrutorDestrutor, UExemploPolimorfismo;
 
 {$R *.dfm}
 
@@ -87,7 +90,35 @@ begin
       end;
     end;
     
-  end;  
+  end; 
+
+  if DBGrid1.SelectedField.FieldName = 'EXEMPLO' then
+  begin
+    if TTiposFuncionalidades(CDSID.Value) = ttpConstructorDestructor then
+    begin
+      try
+        frmConstrutoresDestrutores := TFrmConstrutoresDestrutores.Create(nil);
+        frmConstrutoresDestrutores.ShowModal;
+      finally
+        FreeAndNil(frmConstrutoresDestrutores);
+      end;
+    end;
+    
+  end; 
+
+  if DBGrid1.SelectedField.FieldName = 'EXEMPLO' then
+  begin
+    if TTiposFuncionalidades(CDSID.Value) = ttpPolimorfismo then
+    begin
+      try
+        frmPolimorfismoSobrecargaSobrescrita := TFrmPolimorfismoSobrecargaSobrescrita.Create(nil);
+        frmPolimorfismoSobrecargaSobrescrita.ShowModal;
+      finally
+        FreeAndNil(frmPolimorfismoSobrecargaSobrescrita);
+      end;
+    end;
+    
+  end;     
   
   
 end;

@@ -7,9 +7,7 @@ object DM: TDM
     Connected = True
     HostName = 'localhost'
     Port = 0
-    Database = 
-      'C:\Tiago\Desenvolvimento\Projetos Git\ConhecimentoDelphi\Banco\C' +
-      'ONHECIMENTO.FDB'
+    Database = 'C:\Tiago\Banco\CONHECIMENTO.FDB'
     User = 'sysdba'
     Password = 'masterkey'
     Protocol = 'firebird'

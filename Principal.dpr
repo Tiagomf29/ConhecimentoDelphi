@@ -9,7 +9,11 @@ uses
   UCor in 'UCor.pas',
   UFonte in 'UFonte.pas',
   UExemploRadioGroup in 'UExemploRadioGroup.pas' {frmExemploRadioGroup},
-  UExemploClientDataSetFiltro in 'UExemploClientDataSetFiltro.pas' {frmExemploClientDataSetFiltro};
+  UExemploClientDataSetFiltro in 'UExemploClientDataSetFiltro.pas' {frmExemploClientDataSetFiltro},
+  UExemploConstrutorDestrutor in 'UExemploConstrutorDestrutor.pas' {frmConstrutoresDestrutores},
+  UExemploPolimorfismo in 'UExemploPolimorfismo.pas' {frmPolimorfismoSobrecargaSobrescrita},
+  UExemploHerancaPolimorfismo in 'UExemploHerancaPolimorfismo.pas',
+  UPolimorfismo in 'UPolimorfismo.pas';
 
 {$R *.res}
 
