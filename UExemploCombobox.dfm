@@ -4,9 +4,9 @@ object frmExemploCombobox: TfrmExemploCombobox
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Exemplo Combobox'
-  ClientHeight = 228
-  ClientWidth = 640
-  Color = clMenuHighlight
+  ClientHeight = 343
+  ClientWidth = 320
+  Color = cl3DLight
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -18,31 +18,37 @@ object frmExemploCombobox: TfrmExemploCombobox
   PixelsPerInch = 96
   TextHeight = 13
   object gbComboboxObejtos: TGroupBox
-    Left = 8
+    Left = 3
     Top = 8
-    Width = 305
+    Width = 311
     Height = 105
-    Caption = 'Comobobox Objetos (Apenas o ID dentro do objeto)'
+    Caption = 'Combobox Objetos (Apenas o ID dentro do objeto)'
+    Color = cl3DLight
+    Ctl3D = True
+    ParentBackground = False
+    ParentColor = False
+    ParentCtl3D = False
     TabOrder = 0
     object lblCores: TLabel
-      Left = 19
+      Left = 3
       Top = 21
       Width = 28
       Height = 13
       Caption = 'Cores'
     end
     object cbbCores: TComboBox
-      Left = 19
+      Left = 3
       Top = 40
-      Width = 206
+      Width = 307
       Height = 22
       Style = csOwnerDrawFixed
+      Color = clYellow
       TabOrder = 0
     end
     object Button1: TButton
-      Left = 19
+      Left = 3
       Top = 68
-      Width = 206
+      Width = 307
       Height = 25
       Caption = 'Recuperar ID banco de dados do objeto'
       TabOrder = 1
@@ -89,39 +95,42 @@ object frmExemploCombobox: TfrmExemploCombobox
     end
   end
   object GroupBox1: TGroupBox
-    Left = 319
-    Top = 8
+    Left = 3
+    Top = 122
     Width = 314
     Height = 105
     Caption = 'Combobox de objetos (Objeto com todos atributos da classe)'
+    Ctl3D = True
+    ParentCtl3D = False
     TabOrder = 1
     object lblCores2: TLabel
-      Left = 38
+      Left = 3
       Top = 21
       Width = 28
       Height = 13
       Caption = 'Cores'
     end
     object cbbCores2: TComboBox
-      Left = 36
+      Left = 3
       Top = 40
-      Width = 206
+      Width = 307
       Height = 22
       Style = csOwnerDrawFixed
+      Color = clYellow
       TabOrder = 0
     end
     object Button2: TButton
-      Left = 20
+      Left = 3
       Top = 68
-      Width = 262
+      Width = 308
       Height = 25
       Caption = 'Recuperar Id e sigla banco de dados do objeto'
       TabOrder = 1
       OnClick = Button2Click
     end
     object BitBtn2: TBitBtn
-      Left = 289
-      Top = 13
+      Left = 280
+      Top = 14
       Width = 22
       Height = 25
       Glyph.Data = {
@@ -156,31 +165,34 @@ object frmExemploCombobox: TfrmExemploCombobox
     end
   end
   object GroupBox2: TGroupBox
-    Left = 8
-    Top = 119
-    Width = 305
+    Left = 3
+    Top = 233
+    Width = 311
     Height = 105
     Caption = 'Combobox de objetos (Objetos com tipos Enumerados)'
+    Ctl3D = True
+    ParentCtl3D = False
     TabOrder = 2
     object Label1: TLabel
-      Left = 19
-      Top = 21
+      Left = 3
+      Top = 20
       Width = 28
       Height = 13
       Caption = 'Cores'
     end
     object cbbCores3: TComboBox
-      Left = 19
-      Top = 40
-      Width = 206
+      Left = 3
+      Top = 39
+      Width = 307
       Height = 22
       Style = csOwnerDrawFixed
+      Color = clYellow
       TabOrder = 0
     end
     object Button3: TButton
-      Left = 19
+      Left = 3
       Top = 67
-      Width = 254
+      Width = 307
       Height = 25
       Caption = 'Valdar dados Tipo Enumerado'
       TabOrder = 1

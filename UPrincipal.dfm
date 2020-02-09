@@ -5,7 +5,7 @@ object frmPrincipal: TfrmPrincipal
   BorderStyle = bsSingle
   Caption = 'Principal'
   ClientHeight = 533
-  ClientWidth = 868
+  ClientWidth = 404
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,17 +14,18 @@ object frmPrincipal: TfrmPrincipal
   Font.Style = []
   OldCreateOrder = False
   Position = poDesktopCenter
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object GroupBox1: TGroupBox
     Left = 0
     Top = 0
-    Width = 868
+    Width = 404
     Height = 97
     Align = alTop
     Caption = 'Pesquisa de componentes'
     TabOrder = 0
-    ExplicitWidth = 816
+    ExplicitWidth = 868
     object lblDescricao: TLabel
       Left = 3
       Top = 40
@@ -35,7 +36,7 @@ object frmPrincipal: TfrmPrincipal
     object edtPesquisa: TEdit
       Left = 3
       Top = 59
-      Width = 502
+      Width = 382
       Height = 21
       TabOrder = 0
       OnChange = edtPesquisaChange
@@ -44,10 +45,10 @@ object frmPrincipal: TfrmPrincipal
   object DBGrid1: TDBGrid
     Left = 0
     Top = 97
-    Width = 868
+    Width = 404
     Height = 436
     Align = alClient
-    Color = cl3DLight
+    Color = clBtnFace
     DataSource = DS
     GradientStartColor = clSilver
     Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
@@ -68,6 +69,7 @@ object frmPrincipal: TfrmPrincipal
       item
         Expanded = False
         FieldName = 'DESCRICAO'
+        Width = 200
         Visible = True
       end
       item
@@ -79,26 +81,24 @@ object frmPrincipal: TfrmPrincipal
   end
   object qry: TZQuery
     Connection = DM.conexao
-    Active = True
     SQL.Strings = (
       'select a.id, a.descricao,'#39#39' as exemplo from funcionalidade  a')
     Params = <>
-    Left = 648
-    Top = 16
+    Left = 288
+    Top = 8
   end
   object DS: TDataSource
     AutoEdit = False
     DataSet = CDS
-    Left = 544
-    Top = 16
+    Left = 192
+    Top = 8
   end
   object CDS: TClientDataSet
-    Active = True
     Aggregates = <>
     Params = <>
     ProviderName = 'DSP'
-    Left = 576
-    Top = 16
+    Left = 224
+    Top = 8
     object CDSID: TIntegerField
       Alignment = taLeftJustify
       DisplayLabel = 'C'#243'digo'
@@ -120,7 +120,7 @@ object frmPrincipal: TfrmPrincipal
   end
   object DSP: TDataSetProvider
     DataSet = qry
-    Left = 616
-    Top = 16
+    Left = 256
+    Top = 8
   end
 end

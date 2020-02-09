@@ -28,6 +28,7 @@ type
     procedure DBGrid1CellClick(Column: TColumn);
     procedure DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
       DataCol: Integer; Column: TColumn; State: TGridDrawState);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -39,34 +40,51 @@ var
 
 implementation
 uses
-  UExemploCombobox,UExemploRadioGroup;
+  UExemploCombobox,UExemploRadioGroup,UExemploClientDataSetFiltro;
 
 {$R *.dfm}
 
 procedure TfrmPrincipal.DBGrid1CellClick(Column: TColumn);
 begin
-  if DBGrid1.SelectedField.FieldName = 'CODIGOFONTE' then
-  begin
-    frmCodigoFonte := TfrmCodigoFonte.Create(nil);
-    frmCodigoFonte.ShowModal;
-  end;
 
   if DBGrid1.SelectedField.FieldName = 'EXEMPLO' then
   begin
     if TTiposFuncionalidades(CDSID.Value) = ttpComboboxObjetos then
     begin
-      frmExemploCombobox := TfrmExemploCombobox.Create(nil);
-      frmExemploCombobox.ShowModal;
+      try
+        frmExemploCombobox := TfrmExemploCombobox.Create(nil);
+        frmExemploCombobox.ShowModal;
+      finally
+        FreeAndNil(frmExemploCombobox);
+      end;
     end;
     
   end;
 
   if DBGrid1.SelectedField.FieldName = 'EXEMPLO' then
   begin
+    if TTiposFuncionalidades(CDSID.Value) = ttpFiltroClientDataSet then
+    begin
+      try
+        frmExemploClientDataSetFiltro := TFrmExemploClientDataSetFiltro.Create(nil);
+        frmExemploClientDataSetFiltro.ShowModal;
+      finally
+        FreeAndNil(frmExemploClientDataSetFiltro);
+      end;
+    end;
+    
+  end;   
+
+  if DBGrid1.SelectedField.FieldName = 'EXEMPLO' then
+  begin
     if TTiposFuncionalidades(CDSID.Value) = ttpRadioGroupObjetos then
     begin
-      frmExemploRadioGroup := TFrmExemploRadioGroup.Create(nil);
-      frmExemploRadioGroup.ShowModal;
+      try
+        frmExemploRadioGroup := TFrmExemploRadioGroup.Create(nil);
+        frmExemploRadioGroup.ShowModal;
+      finally
+        FreeAndNil(frmExemploRadioGroup);
+      end;
     end;
     
   end;  
@@ -100,6 +118,12 @@ procedure TfrmPrincipal.edtPesquisaChange(Sender: TObject);
 begin
   cds.Filtered := true;
   cds.Filter := 'Upper(descricao) like'+QuotedStr('%'+ UpperCase(edtPesquisa.Text)+'%')  ;
+end;
+
+procedure TfrmPrincipal.FormShow(Sender: TObject);
+begin
+  CDS.Active := True;
+  qry.Active := True;
 end;
 
 end.

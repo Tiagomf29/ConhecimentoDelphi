@@ -44,7 +44,8 @@ begin
   //Carrega o RichEdit com as propriedades iniciais
   RichEdit.SelStart  := 0;
   RichEdit.SelLength := length(RichEdit.Text);
-  RichEdit.SelAttributes.color := clBlack;
+  richedit.Color := clBlack;
+  RichEdit.SelAttributes.color := clWindow;
   RichEdit.SelAttributes.style := [];
   RichEdit.SelAttributes.Size  := 10;
  
@@ -58,7 +59,7 @@ begin
       RichEdit.SelLength := length(APalavraDestaque);
       RichEdit.SelAttributes.color := clRed;
       RichEdit.SelAttributes.style := [fsBold];
-      RichEdit.SelAttributes.Size  := RichEdit.SelAttributes.Size;
+      RichEdit.SelAttributes.Size  := RichEdit.SelAttributes.Size+3;
   end;
 
   

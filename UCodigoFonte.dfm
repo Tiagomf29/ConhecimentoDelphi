@@ -4,8 +4,8 @@ object frmCodigoFonte: TfrmCodigoFonte
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'C'#243'digo fonte'
-  ClientHeight = 560
-  ClientWidth = 826
+  ClientHeight = 592
+  ClientWidth = 998
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -19,8 +19,8 @@ object frmCodigoFonte: TfrmCodigoFonte
   object richedit: TDBRichEdit
     Left = 0
     Top = 0
-    Width = 826
-    Height = 560
+    Width = 998
+    Height = 592
     Align = alClient
     DataField = 'CODIGO_FONTE'
     Font.Charset = ANSI_CHARSET
@@ -31,7 +31,7 @@ object frmCodigoFonte: TfrmCodigoFonte
     ParentFont = False
     ScrollBars = ssBoth
     TabOrder = 0
-    ExplicitTop = 40
-    ExplicitHeight = 520
+    ExplicitWidth = 826
+    ExplicitHeight = 560
   end
 end

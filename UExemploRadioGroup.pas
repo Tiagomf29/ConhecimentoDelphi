@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls,System.Generics.Collections,
-  Vcl.ExtCtrls;
+  Vcl.ExtCtrls, Vcl.Buttons;
 
 type
   TfrmExemploRadioGroup = class(TForm)
@@ -18,10 +18,16 @@ type
     Button2: TButton;
     rgCores3: TRadioGroup;
     Button3: TButton;
+    BitBtn1: TBitBtn;
+    BitBtn2: TBitBtn;
+    BitBtn3: TBitBtn;
     procedure FormShow(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
+    procedure BitBtn1Click(Sender: TObject);
+    procedure BitBtn2Click(Sender: TObject);
+    procedure BitBtn3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -33,9 +39,42 @@ var
 
 implementation
 uses 
-  UCor;
+  UCor, UCodigoFonte;
 
 {$R *.dfm}
+
+procedure TfrmExemploRadioGroup.BitBtn1Click(Sender: TObject);
+begin
+  try
+    frmCodigoFonte := TfrmCodigoFonte.Create(nil);
+    frmCodigoFonte.carregaCodigoFormulario(4,'rgCores.Items.AddObject(listaTemp.Items[i].nome, TCor(corTemp.id));');
+    frmCodigoFonte.ShowModal;
+  finally
+    FreeAndNil(frmCodigoFonte);
+  end;
+end;
+
+procedure TfrmExemploRadioGroup.BitBtn2Click(Sender: TObject);
+begin
+  try
+    frmCodigoFonte := TfrmCodigoFonte.Create(nil);
+    frmCodigoFonte.carregaCodigoFormulario(5,'rgCores2.Items.AddObject(listaTemp.Items[i].nome, TCor(corTemp));');
+    frmCodigoFonte.ShowModal;
+  finally
+    FreeAndNil(frmCodigoFonte);
+  end;
+end;
+
+procedure TfrmExemploRadioGroup.BitBtn3Click(Sender: TObject);
+begin
+  try
+    frmCodigoFonte := TfrmCodigoFonte.Create(nil);
+    frmCodigoFonte.carregaCodigoFormulario(6,'rgCores3.Items.AddObject(listaTemp.Items[i].nome, TObject(corTemp.converteEnumCor(corTemp.id )));');
+    frmCodigoFonte.ShowModal;
+  finally
+    FreeAndNil(frmCodigoFonte);
+  end;
+end;
 
 procedure TfrmExemploRadioGroup.Button1Click(Sender: TObject);
 begin
@@ -140,6 +179,10 @@ begin
     FreeAndNil(listaTemp);
   end;    
 
+  rgCores.ItemIndex := 0;
+  rgCores2.ItemIndex:=0;
+  rgCores3.ItemIndex:=0;
+  
 end;
 
 end.
