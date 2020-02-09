@@ -5,7 +5,7 @@ object frmPrincipal: TfrmPrincipal
   BorderStyle = bsSingle
   Caption = 'Principal'
   ClientHeight = 533
-  ClientWidth = 826
+  ClientWidth = 868
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -19,7 +19,7 @@ object frmPrincipal: TfrmPrincipal
   object GroupBox1: TGroupBox
     Left = 0
     Top = 0
-    Width = 826
+    Width = 868
     Height = 97
     Align = alTop
     Caption = 'Pesquisa de componentes'
@@ -44,7 +44,7 @@ object frmPrincipal: TfrmPrincipal
   object DBGrid1: TDBGrid
     Left = 0
     Top = 97
-    Width = 826
+    Width = 868
     Height = 436
     Align = alClient
     Color = cl3DLight
@@ -59,12 +59,29 @@ object frmPrincipal: TfrmPrincipal
     TitleFont.Style = []
     OnCellClick = DBGrid1CellClick
     OnDrawColumnCell = DBGrid1DrawColumnCell
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'ID'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'DESCRICAO'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'EXEMPLO'
+        Width = 100
+        Visible = True
+      end>
   end
   object qry: TZQuery
     Connection = DM.conexao
     Active = True
     SQL.Strings = (
-      'select * from funcionalidade')
+      'select a.id, a.descricao,'#39#39' as exemplo from funcionalidade  a')
     Params = <>
     Left = 648
     Top = 16
@@ -94,10 +111,11 @@ object frmPrincipal: TfrmPrincipal
       Required = True
       Size = 100
     end
-    object CDSCODIGOFONTE: TBlobField
-      DisplayLabel = 'C'#243'digo Fonte'
-      FieldName = 'CODIGOFONTE'
-      Required = True
+    object CDSEXEMPLO: TWideStringField
+      DisplayLabel = 'Exemplo'
+      FieldName = 'EXEMPLO'
+      ReadOnly = True
+      Size = 0
     end
   end
   object DSP: TDataSetProvider

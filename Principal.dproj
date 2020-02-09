@@ -65,6 +65,7 @@
 			<DCC_RemoteDebug>true</DCC_RemoteDebug>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+			<DCC_DcuOutput>C:\Users\Tiago\Desktop\Exer\</DCC_DcuOutput>
 			<VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
 			<VerInfo_Locale>1033</VerInfo_Locale>
 			<DCC_RemoteDebug>false</DCC_RemoteDebug>
@@ -91,6 +92,15 @@
 			<DCCReference Include="UCodigoFonte.pas">
 				<Form>frmCodigoFonte</Form>
 				<FormType>dfm</FormType>
+			</DCCReference>
+			<DCCReference Include="UExemploCombobox.pas">
+				<Form>frmExemploCombobox</Form>
+				<FormType>dfm</FormType>
+			</DCCReference>
+			<DCCReference Include="UCor.pas"/>
+			<DCCReference Include="UFonte.pas"/>
+			<DCCReference Include="UExemploRadioGroup.pas">
+				<Form>frmExemploRadioGroup</Form>
 			</DCCReference>
 			<BuildConfiguration Include="Release">
 				<Key>Cfg_2</Key>
