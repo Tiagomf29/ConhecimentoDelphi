@@ -13,13 +13,17 @@ uses
   UExemploConstrutorDestrutor in 'UExemploConstrutorDestrutor.pas' {frmConstrutoresDestrutores},
   UExemploPolimorfismo in 'UExemploPolimorfismo.pas' {frmPolimorfismoSobrecargaSobrescrita},
   UExemploHerancaPolimorfismo in 'UExemploHerancaPolimorfismo.pas',
-  UPolimorfismo in 'UPolimorfismo.pas';
+  UPolimorfismo in 'UPolimorfismo.pas',
+  UExemploListas in 'UExemploListas.pas' {frmExemploListas},
+  UExemploArrays in 'UExemploArrays.pas' {FrmExemploArrays};
 
 {$R *.res}
 
 begin
   Application.CreateForm(TDM, DM);
   Application.CreateForm(TfrmPrincipal, frmPrincipal);
+  Application.CreateForm(TfrmExemploListas, frmExemploListas);
+  Application.CreateForm(TFrmExemploArrays, FrmExemploArrays);
   Application.Initialize;
   Application.MainFormOnTaskbar := True;  
   Application.CreateForm(TfrmPrincipal, frmPrincipal);  

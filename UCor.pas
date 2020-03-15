@@ -33,9 +33,6 @@ type
     qry : TZQuery;
     lista : TObjectList<TCor>;
     cor : Tcor; 
-    
-    constructor create();
-    destructor Destroy; override;
 
   public
     property id: Smallint read getId write setId;
@@ -45,6 +42,11 @@ type
     function getList(): TObjectList<TCor>;
     function converteEnumCor(AId : smallint): TCorEnumerado;
     procedure setObject();
+    procedure copyFromObject(cor : Tcor);
+
+    constructor Create();
+    destructor Destroy; override;
+    
   
   end;
 
@@ -74,21 +76,30 @@ begin
     
 end;
 
-constructor TCor.create;
+procedure TCor.copyFromObject(cor : Tcor);
 begin
+
+  FId := cor.id;
+  FNome := cor.nome;
+  FSigla := cor.sigla;
+  
+end;
+
+constructor TCor.Create();
+begin
+
+  lista := TObjectList<TCor>.Create();
+  qry  := TZQuery.Create(nil);
+  qry.Connection := DM.conexao;
+
 end;
 
 destructor TCor.Destroy;
 begin
-  if qry <> nil then
-    FreeAndNil(qry);
 
-  if lista <> nil then
-    FreeAndNil(lista);
-
-  if cor <> nil then
-    FreeAndNil(cor)  ;
-
+  FreeAndNil(qry);
+  FreeAndNil(lista);
+  
   inherited;
 end;
 
@@ -99,10 +110,6 @@ end;
 
 function TCor.getList : TObjectList<TCor>;
 begin
-
-  lista := TObjectList<TCor>.Create;
-  qry  := TZQuery.Create(nil);
-  qry.Connection := DM.conexao;
 
   qry.Close;
   qry.SQL.Clear;

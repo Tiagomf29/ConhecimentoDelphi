@@ -13,7 +13,7 @@ object frmExemploClientDataSetFiltro: TfrmExemploClientDataSetFiltro
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
-  Position = poDesktopCenter
+  Position = poScreenCenter
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
@@ -25,9 +25,6 @@ object frmExemploClientDataSetFiltro: TfrmExemploClientDataSetFiltro
     Align = alBottom
     Caption = 'Pesquisa'
     TabOrder = 0
-    ExplicitLeft = 24
-    ExplicitTop = 160
-    ExplicitWidth = 590
     object Label1: TLabel
       Left = 8
       Top = 26
@@ -67,8 +64,6 @@ object frmExemploClientDataSetFiltro: TfrmExemploClientDataSetFiltro
     Align = alTop
     Caption = 'Cadastrar'
     TabOrder = 2
-    ExplicitTop = -5
-    ExplicitWidth = 590
     object Label2: TLabel
       Left = 8
       Top = 32
