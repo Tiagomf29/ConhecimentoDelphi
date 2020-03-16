@@ -15,7 +15,8 @@ uses
   UExemploHerancaPolimorfismo in 'UExemploHerancaPolimorfismo.pas',
   UPolimorfismo in 'UPolimorfismo.pas',
   UExemploListas in 'UExemploListas.pas' {frmExemploListas},
-  UExemploArrays in 'UExemploArrays.pas' {FrmExemploArrays};
+  UExemploArrays in 'UExemploArrays.pas' {FrmExemploArrays},
+  UExemploCopiaObjeto in 'UExemploCopiaObjeto.pas' {frmCopiaObjetos};
 
 {$R *.res}
 
@@ -24,6 +25,7 @@ begin
   Application.CreateForm(TfrmPrincipal, frmPrincipal);
   Application.CreateForm(TfrmExemploListas, frmExemploListas);
   Application.CreateForm(TFrmExemploArrays, FrmExemploArrays);
+  Application.CreateForm(TfrmCopiaObjetos, frmCopiaObjetos);
   Application.Initialize;
   Application.MainFormOnTaskbar := True;  
   Application.CreateForm(TfrmPrincipal, frmPrincipal);  
