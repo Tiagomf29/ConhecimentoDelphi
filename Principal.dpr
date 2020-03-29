@@ -16,16 +16,15 @@ uses
   UPolimorfismo in 'UPolimorfismo.pas',
   UExemploListas in 'UExemploListas.pas' {frmExemploListas},
   UExemploArrays in 'UExemploArrays.pas' {FrmExemploArrays},
-  UExemploCopiaObjeto in 'UExemploCopiaObjeto.pas' {frmCopiaObjetos};
+  UExemploCopiaObjeto in 'UExemploCopiaObjeto.pas' {frmCopiaObjetos},
+  URelatorios in 'URelatorios.pas' {frmRelatorios},
+  URelatorioQrp in 'URelatorioQrp.pas' {frmRelQrp};
 
 {$R *.res}
 
 begin
   Application.CreateForm(TDM, DM);
   Application.CreateForm(TfrmPrincipal, frmPrincipal);
-  Application.CreateForm(TfrmExemploListas, frmExemploListas);
-  Application.CreateForm(TFrmExemploArrays, FrmExemploArrays);
-  Application.CreateForm(TfrmCopiaObjetos, frmCopiaObjetos);
   Application.Initialize;
   Application.MainFormOnTaskbar := True;  
   Application.CreateForm(TfrmPrincipal, frmPrincipal);  

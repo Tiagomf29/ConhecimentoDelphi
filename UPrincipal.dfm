@@ -5,7 +5,7 @@ object frmPrincipal: TfrmPrincipal
   BorderStyle = bsSingle
   Caption = 'Principal'
   ClientHeight = 533
-  ClientWidth = 404
+  ClientWidth = 551
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -20,11 +20,12 @@ object frmPrincipal: TfrmPrincipal
   object GroupBox1: TGroupBox
     Left = 0
     Top = 0
-    Width = 404
+    Width = 551
     Height = 97
     Align = alTop
     Caption = 'Pesquisa de componentes'
     TabOrder = 0
+    ExplicitWidth = 404
     object lblDescricao: TLabel
       Left = 3
       Top = 40
@@ -44,7 +45,7 @@ object frmPrincipal: TfrmPrincipal
   object DBGrid1: TDBGrid
     Left = 0
     Top = 97
-    Width = 404
+    Width = 551
     Height = 436
     Align = alClient
     Color = clBtnFace
@@ -68,7 +69,7 @@ object frmPrincipal: TfrmPrincipal
       item
         Expanded = False
         FieldName = 'DESCRICAO'
-        Width = 200
+        Width = 330
         Visible = True
       end
       item
@@ -108,7 +109,7 @@ object frmPrincipal: TfrmPrincipal
       DisplayLabel = 'Descri'#231#227'o'
       FieldName = 'DESCRICAO'
       Required = True
-      Size = 100
+      Size = 200
     end
     object CDSEXEMPLO: TWideStringField
       DisplayLabel = 'Exemplo'

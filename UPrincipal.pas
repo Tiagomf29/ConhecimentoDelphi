@@ -12,7 +12,8 @@ type
 
   TTiposFuncionalidades = (ttpNone, ttpComboboxObjetos, ttpFiltroClientDataSet, 
                            ttpRadioGroupObjetos, ttpConstructorDestructor, 
-                           ttpPolimorfismo, ttpLista, ttpArrays, ttpCopiaObjetos);
+                           ttpPolimorfismo, ttpLista, ttpArrays, ttpCopiaObjetos,
+                           ttpRelatorios);
 
   TfrmPrincipal = class(TForm)
     GroupBox1: TGroupBox;
@@ -43,7 +44,8 @@ var
 implementation
 uses
   UExemploCombobox, UExemploRadioGroup, UExemploClientDataSetFiltro,
-  UExemploConstrutorDestrutor, UExemploPolimorfismo, UexemploListas, UExemploArrays, UExemploCopiaObjeto;
+  UExemploConstrutorDestrutor, UExemploPolimorfismo, UexemploListas, UExemploArrays, 
+  UExemploCopiaObjeto, URelatorios;
 {$R *.dfm}
 
 procedure TfrmPrincipal.DBGrid1CellClick(Column: TColumn);
@@ -156,6 +158,20 @@ begin
         frmCopiaObjetos.ShowModal;
       finally
         FreeAndNil(frmCopiaObjetos);
+      end;
+    end;
+    
+  end;   
+
+ if DBGrid1.SelectedField.FieldName = 'EXEMPLO' then
+  begin
+    if TTiposFuncionalidades(CDSID.Value) = ttpRelatorios then
+    begin
+      try
+        frmRelatorios := TfrmRelatorios.Create(nil);
+        frmRelatorios.ShowModal;
+      finally
+        FreeAndNil(frmRelatorios);
       end;
     end;
     

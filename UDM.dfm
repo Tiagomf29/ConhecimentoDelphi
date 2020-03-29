@@ -6,7 +6,9 @@ object DM: TDM
     ControlsCodePage = cCP_UTF16
     Connected = True
     Port = 0
-    Database = 'C:\Ingles\Banco\CONHECIMENTO.FDB'
+    Database = 
+      'C:\Tiago\Desenvolvimento\Projetos Git\ConhecimentoDelphi\Banco\C' +
+      'ONHECIMENTO.FDB'
     User = 'sysdba'
     Password = 'masterkey'
     Protocol = 'firebird-3.0'
