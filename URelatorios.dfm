@@ -4,8 +4,8 @@ object frmRelatorios: TfrmRelatorios
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Relat'#243'rios'
-  ClientHeight = 167
-  ClientWidth = 290
+  ClientHeight = 149
+  ClientWidth = 289
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -359,6 +359,21 @@ object frmRelatorios: TfrmRelatorios
     RuntimeVisibility = rtDeveloper
     DataSet = CDS
     Left = 176
+    Top = 104
+  end
+  object rvsystm1: TRvSystem
+    TitleSetup = 'Output Options'
+    TitleStatus = 'Report Status'
+    TitlePreview = 'Report Preview'
+    SystemFiler.StatusFormat = 'Generating page %p'
+    SystemPreview.FormState = wsMaximized
+    SystemPreview.ZoomFactor = 100.000000000000000000
+    SystemPrinter.ScaleX = 100.000000000000000000
+    SystemPrinter.ScaleY = 100.000000000000000000
+    SystemPrinter.StatusFormat = 'Printing page %p'
+    SystemPrinter.Title = 'Rave Report'
+    SystemPrinter.UnitsFactor = 1.000000000000000000
+    Left = 240
     Top = 104
   end
 end

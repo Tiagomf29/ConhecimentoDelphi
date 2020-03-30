@@ -43,6 +43,7 @@ type
     btn1: TBitBtn;
     btn2: TBitBtn;
     btn3: TBitBtn;
+    rvsystm1: TRvSystem;
     procedure btnRDPRINTClick(Sender: TObject);
     procedure btnQuickReportClick(Sender: TObject);
     procedure FormShow(Sender: TObject);

@@ -165,7 +165,7 @@ object frmRelQrp: TfrmRelQrp
         XLColumn = 0
         Alignment = taLeftJustify
         AlignToBand = False
-        Caption = 'Realt'#243'rio Quick report'
+        Caption = 'Relat'#243'rio Quick report'
         Color = clWhite
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
