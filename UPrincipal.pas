@@ -13,7 +13,8 @@ type
   TTiposFuncionalidades = (ttpNone, ttpComboboxObjetos, ttpFiltroClientDataSet, 
                            ttpRadioGroupObjetos, ttpConstructorDestructor, 
                            ttpPolimorfismo, ttpLista, ttpArrays, ttpCopiaObjetos,
-                           ttpRelatorios);
+                           ttpRelatorios, ttpHerancaClasses, ttpHerancaFormularios,
+                           ttpCheckListBoxObjetos, ttpWebServiceSoap, ttpCase, ttpBotaoGrid);
 
   TfrmPrincipal = class(TForm)
     GroupBox1: TGroupBox;
@@ -45,7 +46,8 @@ implementation
 uses
   UExemploCombobox, UExemploRadioGroup, UExemploClientDataSetFiltro,
   UExemploConstrutorDestrutor, UExemploPolimorfismo, UexemploListas, UExemploArrays, 
-  UExemploCopiaObjeto, URelatorios;
+  UExemploCopiaObjeto, URelatorios, UHerancaClasses, UExemploHerancaFormularios,
+  UExemploCheckListBox;
 {$R *.dfm}
 
 procedure TfrmPrincipal.DBGrid1CellClick(Column: TColumn);
@@ -53,130 +55,115 @@ begin
 
   if DBGrid1.SelectedField.FieldName = 'EXEMPLO' then
   begin
-    if TTiposFuncionalidades(CDSID.Value) = ttpComboboxObjetos then
-    begin
-      try
-        frmExemploCombobox := TfrmExemploCombobox.Create(nil);
-        frmExemploCombobox.ShowModal;
-      finally
-        FreeAndNil(frmExemploCombobox);
-      end;
+    case TTiposFuncionalidades(CDSID.Value) of
+
+      ttpComboboxObjetos       :  try
+                                    frmExemploCombobox := TfrmExemploCombobox.Create(nil);
+                                    frmExemploCombobox.ShowModal;
+                                  finally
+                                    FreeAndNil(frmExemploCombobox);
+                                  end;
+                                
+                             
+      ttpFiltroClientDataSet   :  try
+                                    frmExemploClientDataSetFiltro := TFrmExemploClientDataSetFiltro.Create(nil);
+                                    frmExemploClientDataSetFiltro.ShowModal;
+                                  finally
+                                      FreeAndNil(frmExemploClientDataSetFiltro);
+                                  end;
+                                  
+      ttpRadioGroupObjetos     :  try
+                                    frmExemploRadioGroup := TFrmExemploRadioGroup.Create(nil);
+                                    frmExemploRadioGroup.ShowModal;
+                                  finally
+                                    FreeAndNil(frmExemploRadioGroup);
+                                  end;
+                                  
+      ttpConstructorDestructor :  try
+                                    frmConstrutoresDestrutores := TFrmConstrutoresDestrutores.Create(nil);
+                                    frmConstrutoresDestrutores.ShowModal;
+                                  finally
+                                    FreeAndNil(frmConstrutoresDestrutores);
+                                  end;
+                                  
+      ttpPolimorfismo          :  try
+                                    frmPolimorfismoSobrecargaSobrescrita := TFrmPolimorfismoSobrecargaSobrescrita.Create(nil);
+                                    frmPolimorfismoSobrecargaSobrescrita.ShowModal;
+                                  finally
+                                    FreeAndNil(frmPolimorfismoSobrecargaSobrescrita);
+                                  end;                                                                    
+
+      ttpLista                 :  try
+                                    frmExemploListas := tFrmExemploListas.Create(nil);
+                                    frmExemploListas.ShowModal;
+                                  finally
+                                    FreeAndNil(frmExemploListas);
+                                  end;
+                                                                    
+      ttpArrays                :  try
+                                    FrmExemploArrays := tFrmExemploArrays.Create(nil);
+                                    FrmExemploArrays.ShowModal;
+                                  finally
+                                    FreeAndNil(FrmExemploArrays);
+                                  end;
+                                                                   
+      ttpCopiaObjetos          :  try
+                                    frmCopiaObjetos := tfrmCopiaObjetos.Create(nil);
+                                    frmCopiaObjetos.ShowModal;
+                                  finally
+                                    FreeAndNil(frmCopiaObjetos);
+                                  end;
+                                                                    
+      ttpRelatorios            :  try
+                                    frmRelatorios := TfrmRelatorios.Create(nil);
+                                    frmRelatorios.ShowModal;
+                                  finally
+                                    FreeAndNil(frmRelatorios);
+                                  end;
+                                                                  
+      ttpHerancaClasses        :  try
+                                    frmHerancaClasse := TfrmHerancaClasse.Create(nil);
+                                    frmHerancaClasse.ShowModal;
+                                  finally
+                                    FreeAndNil(frmHerancaClasse);
+                                  end;
+                                                                  
+      ttpHerancaFormularios    :  try
+                                    frmPrincipalHeracaoFormularios := TfrmPrincipalHeracaoFormularios.Create(nil);
+                                    frmPrincipalHeracaoFormularios.ShowModal;
+                                  finally
+                                    FreeAndNil(frmPrincipalHeracaoFormularios);
+                                  end;
+                                                                    
+      ttpCheckListBoxObjetos   :  try
+                                    frmExemploCheckListBox := TfrmExemploCheckListBox.Create(nil);
+                                    frmExemploCheckListBox.ShowModal;
+                                  finally
+                                    FreeAndNil(frmExemploCheckListBox);
+                                  end;
+                                  
+      ttpCase                  :  try
+                                    MessageDlg('Exemplo referente a tela principal (Grid) desta aplicação',mtInformation,[mbok],0);
+                                    frmCodigoFonte := TfrmCodigoFonte.Create(nil);
+                                    frmCodigoFonte.carregaCodigoFormulario(28,'case TTiposFuncionalidades(CDSID.Value) of');
+                                    frmCodigoFonte.ShowModal;
+                                  finally
+                                    FreeAndNil(frmCodigoFonte);
+                                  end;
+
+      ttpBotaoGrid             :  try
+                                    MessageDlg('Exemplo referente a tela principal (Grid) desta aplicação',mtInformation,[mbok],0);
+                                    frmCodigoFonte := TfrmCodigoFonte.Create(nil);
+                                    frmCodigoFonte.carregaCodigoFormulario(29,'DBGrid1DrawColumnCell');
+                                    frmCodigoFonte.ShowModal;
+                                  finally
+                                    FreeAndNil(frmCodigoFonte);
+                                  end;                                
+
+                                                                    
+
     end;
-    
   end;
-
-  if DBGrid1.SelectedField.FieldName = 'EXEMPLO' then
-  begin
-    if TTiposFuncionalidades(CDSID.Value) = ttpFiltroClientDataSet then
-    begin
-      try
-        frmExemploClientDataSetFiltro := TFrmExemploClientDataSetFiltro.Create(nil);
-        frmExemploClientDataSetFiltro.ShowModal;
-      finally
-        FreeAndNil(frmExemploClientDataSetFiltro);
-      end;
-    end;
-    
-  end;   
-
-  if DBGrid1.SelectedField.FieldName = 'EXEMPLO' then
-  begin
-    if TTiposFuncionalidades(CDSID.Value) = ttpRadioGroupObjetos then
-    begin
-      try
-        frmExemploRadioGroup := TFrmExemploRadioGroup.Create(nil);
-        frmExemploRadioGroup.ShowModal;
-      finally
-        FreeAndNil(frmExemploRadioGroup);
-      end;
-    end;
-    
-  end; 
-
-  if DBGrid1.SelectedField.FieldName = 'EXEMPLO' then
-  begin
-    if TTiposFuncionalidades(CDSID.Value) = ttpConstructorDestructor then
-    begin
-      try
-        frmConstrutoresDestrutores := TFrmConstrutoresDestrutores.Create(nil);
-        frmConstrutoresDestrutores.ShowModal;
-      finally
-        FreeAndNil(frmConstrutoresDestrutores);
-      end;
-    end;
-    
-  end; 
-
-  if DBGrid1.SelectedField.FieldName = 'EXEMPLO' then
-  begin
-    if TTiposFuncionalidades(CDSID.Value) = ttpPolimorfismo then
-    begin
-      try
-        frmPolimorfismoSobrecargaSobrescrita := TFrmPolimorfismoSobrecargaSobrescrita.Create(nil);
-        frmPolimorfismoSobrecargaSobrescrita.ShowModal;
-      finally
-        FreeAndNil(frmPolimorfismoSobrecargaSobrescrita);
-      end;
-    end;
-    
-  end;
-
- if DBGrid1.SelectedField.FieldName = 'EXEMPLO' then
-  begin
-    if TTiposFuncionalidades(CDSID.Value) = ttpLista then
-    begin
-      try
-        frmExemploListas := tFrmExemploListas.Create(nil);
-        frmExemploListas.ShowModal;
-      finally
-        FreeAndNil(frmExemploListas);
-      end;
-    end;
-    
-  end;  
-
- if DBGrid1.SelectedField.FieldName = 'EXEMPLO' then
-  begin
-    if TTiposFuncionalidades(CDSID.Value) = ttpArrays then
-    begin
-      try
-        FrmExemploArrays := tFrmExemploArrays.Create(nil);
-        FrmExemploArrays.ShowModal;
-      finally
-        FreeAndNil(FrmExemploArrays);
-      end;
-    end;
-    
-  end; 
-
- if DBGrid1.SelectedField.FieldName = 'EXEMPLO' then
-  begin
-    if TTiposFuncionalidades(CDSID.Value) = ttpCopiaObjetos then
-    begin
-      try
-        frmCopiaObjetos := tfrmCopiaObjetos.Create(nil);
-        frmCopiaObjetos.ShowModal;
-      finally
-        FreeAndNil(frmCopiaObjetos);
-      end;
-    end;
-    
-  end;   
-
- if DBGrid1.SelectedField.FieldName = 'EXEMPLO' then
-  begin
-    if TTiposFuncionalidades(CDSID.Value) = ttpRelatorios then
-    begin
-      try
-        frmRelatorios := TfrmRelatorios.Create(nil);
-        frmRelatorios.ShowModal;
-      finally
-        FreeAndNil(frmRelatorios);
-      end;
-    end;
-    
-  end;          
-  
   
 end;
 

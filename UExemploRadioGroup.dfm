@@ -22,7 +22,7 @@ object frmExemploRadioGroup: TfrmExemploRadioGroup
     Top = 8
     Width = 297
     Height = 205
-    Caption = 'CheckListBox de Objetos (Apenas o Id dentro do objeto )'
+    Caption = 'RadioGroup de Objetos (Apenas o Id dentro do objeto )'
     TabOrder = 0
     object rgCores: TRadioGroup
       Left = 3
@@ -91,9 +91,7 @@ object frmExemploRadioGroup: TfrmExemploRadioGroup
     Top = 8
     Width = 338
     Height = 205
-    Caption = 
-      'CheckListBox de objetos (Objeto com todos os atributos da classe' +
-      ' )'
+    Caption = 'RadioGroup de objetos (Objeto com todos os atributos da classe )'
     TabOrder = 1
     object rgCores2: TRadioGroup
       Left = 3
@@ -157,7 +155,7 @@ object frmExemploRadioGroup: TfrmExemploRadioGroup
     Top = 219
     Width = 297
     Height = 198
-    Caption = 'CheckListBox de objetos (Objetos com tipos Enumerados)'
+    Caption = 'RadioGroup de objetos (Objetos com tipos Enumerados)'
     TabOrder = 2
     object rgCores3: TRadioGroup
       Left = 3

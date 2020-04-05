@@ -213,7 +213,7 @@ object frmRelatorios: TfrmRelatorios
   object Fast: TfrxReport
     Version = '4.11.17'
     DotMatrixReport = False
-    IniFile = '\Software\Fast Reports'
+    IniFile = 'C:\Ingles\Banco'
     PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
     PreviewOptions.Zoom = 1.000000000000000000
     PrintOptions.Printer = 'Default'

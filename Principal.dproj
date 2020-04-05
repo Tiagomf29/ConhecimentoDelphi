@@ -136,6 +136,27 @@
 				<Form>frmRelQrp</Form>
 				<FormType>dfm</FormType>
 			</DCCReference>
+			<DCCReference Include="UHerancaClasses.pas">
+				<Form>frmHerancaClasse</Form>
+				<FormType>dfm</FormType>
+			</DCCReference>
+			<DCCReference Include="UClassesDeAnimais.pas"/>
+			<DCCReference Include="UPadraoHerancaFormulario.pas">
+				<Form>frmFormularioHerancaPrincipal</Form>
+				<FormType>dfm</FormType>
+			</DCCReference>
+			<DCCReference Include="UfrmFormularioHerdado.pas">
+				<Form>frmFormularioHerdado</Form>
+				<FormType>dfm</FormType>
+			</DCCReference>
+			<DCCReference Include="UExemploHerancaFormularios.pas">
+				<Form>frmPrincipalHeracaoFormularios</Form>
+				<FormType>dfm</FormType>
+			</DCCReference>
+			<DCCReference Include="UExemploCheckListBox.pas">
+				<Form>frmExemploCheckListBox</Form>
+				<FormType>dfm</FormType>
+			</DCCReference>
 			<BuildConfiguration Include="Release">
 				<Key>Cfg_2</Key>
 				<CfgParent>Base</CfgParent>

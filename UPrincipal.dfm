@@ -25,7 +25,6 @@ object frmPrincipal: TfrmPrincipal
     Align = alTop
     Caption = 'Pesquisa de componentes'
     TabOrder = 0
-    ExplicitWidth = 404
     object lblDescricao: TLabel
       Left = 3
       Top = 40
@@ -81,8 +80,11 @@ object frmPrincipal: TfrmPrincipal
   end
   object qry: TZQuery
     Connection = DM.conexao
+    Active = True
     SQL.Strings = (
-      'select a.id, a.descricao,'#39#39' as exemplo from funcionalidade  a')
+      
+        'select a.id, a.descricao,'#39#39' as exemplo from funcionalidade  a or' +
+        'der by a.id')
     Params = <>
     Left = 288
     Top = 8

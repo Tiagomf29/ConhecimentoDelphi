@@ -18,7 +18,13 @@ uses
   UExemploArrays in 'UExemploArrays.pas' {FrmExemploArrays},
   UExemploCopiaObjeto in 'UExemploCopiaObjeto.pas' {frmCopiaObjetos},
   URelatorios in 'URelatorios.pas' {frmRelatorios},
-  URelatorioQrp in 'URelatorioQrp.pas' {frmRelQrp};
+  URelatorioQrp in 'URelatorioQrp.pas' {frmRelQrp},
+  UHerancaClasses in 'UHerancaClasses.pas' {frmHerancaClasse},
+  UClassesDeAnimais in 'UClassesDeAnimais.pas',
+  UPadraoHerancaFormulario in 'UPadraoHerancaFormulario.pas' {frmFormularioHerancaPrincipal},
+  UfrmFormularioHerdado in 'UfrmFormularioHerdado.pas' {frmFormularioHerdado},
+  UExemploHerancaFormularios in 'UExemploHerancaFormularios.pas' {frmPrincipalHeracaoFormularios},
+  UExemploCheckListBox in 'UExemploCheckListBox.pas' {frmExemploCheckListBox};
 
 {$R *.res}
 
